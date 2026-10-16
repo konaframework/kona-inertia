@@ -1,0 +1,77 @@
+---
+title: Installation
+description: Add kona-inertia to a Kona project — Gradle, provider, middleware, and starter kit.
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Add the dependency
+
+```kotlin
+dependencies {
+    implementation("dev.kona:kona-http:0.1.0-SNAPSHOT")
+    implementation("dev.kona:kona-crema:0.1.0-SNAPSHOT")
+    implementation("dev.kona:kona-inertia:0.1.0-SNAPSHOT")
+}
+```
+
+Until Central publishes are live:
+
+```bash
+# From a Kona checkout
+./gradlew publishToMavenLocal -x test
+
+# From a kona-inertia checkout
+./gradlew :kona-inertia:publishToMavenLocal
+```
+
+Or scaffold:
+
+```bash
+kona new my-app --kit=inertia
+# kona new my-app --kit=inertia --lang=java
+```
+
+## Register the provider
+
+<Tabs syncKey="lang">
+<TabItem label="Kotlin">
+
+```kotlin
+app.register(HttpServiceProvider())
+app.register(CremaServiceProvider()) // optional root Crema view
+app.register(InertiaServiceProvider())
+app.boot()
+app.resolve(HttpKernel::class.java).pushMiddleware(HandleInertiaRequests())
+```
+
+</TabItem>
+<TabItem label="Java">
+
+```java
+app.register(new HttpServiceProvider());
+app.register(new CremaServiceProvider());
+app.register(new InertiaServiceProvider());
+app.boot();
+app.resolve(HttpKernel.class).pushMiddleware(new HandleInertiaRequests());
+```
+
+</TabItem>
+</Tabs>
+
+`InertiaServiceProvider` binds `InertiaManager` and the Vite [`AssetManifest`](../../advanced/vite/). Prefer pushing middleware after boot so the facade manager is set.
+
+## Config keys
+
+Set these before or during registration (see [Configuration](../../essentials/configuration/)):
+
+| Key | Purpose |
+|-----|---------|
+| `inertia.root_view` | Crema view name (e.g. `app`) |
+| `inertia.root_html` | Plain HTML with `@page` / `@vite` when no Crema view |
+| `inertia.version` | Asset version string |
+| `inertia.public_path` | Directory for Vite `build/` and `hot` |
+
+## Repositories
+
+Generated apps and samples resolve `dev.kona` from **mavenLocal()** then Maven Central.

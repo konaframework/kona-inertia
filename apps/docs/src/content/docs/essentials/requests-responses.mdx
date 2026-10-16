@@ -1,0 +1,37 @@
+---
+title: Requests & responses
+description: HTML shells, JSON visits, headers, and how Inertia detects a client request.
+---
+
+## Detecting an Inertia request
+
+`InertiaManager.isInertiaRequest(request)` is true when the request has an `X-Inertia` header (any value). The official clients send `X-Inertia: true`.
+
+## First visit → HTML
+
+- Status `200`
+- `Content-Type` HTML
+- Body: root Crema view or `rootHtml`
+- View data: `page` (raw JSON), `pageAttr` (HTML-escaped for attributes), `vite` (script/link tags)
+- No `X-Inertia` response header on the plain HTML shell
+
+Default root HTML (when Crema is unused) embeds `@page` inside `data-page='…'`.
+
+## Inertia visit → JSON
+
+- Body: JSON map of the page object
+- `X-Inertia: true`
+- `Vary: X-Inertia`
+- `X-Inertia-Version` when the manager version is non-empty
+
+## Decoration
+
+After the route handler runs, middleware calls `manager.decorate(response)`. If the response already has `X-Inertia: true` or `X-Inertia-Location`, and a version is set, `X-Inertia-Version` is added.
+
+## Explicit request render
+
+```kotlin
+Inertia.render(request, "Pages/Show", mapOf("id" to 42))
+```
+
+Use this from code paths that are not under `HandleInertiaRequests`, or when you want a different request object than the ThreadLocal current.

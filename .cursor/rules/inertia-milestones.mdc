@@ -1,0 +1,24 @@
+---
+description: Inertia package milestone enforcement
+globs:
+alwaysApply: true
+---
+
+# kona-inertia milestone enforcement
+
+Before implementation, read `AGENTS.md` and `MILESTONES.md`.
+
+## Laws
+
+1. One active milestone at a time.
+2. Develop to exhaustion within scope.
+3. 100% line + branch coverage on production code; CI fails below 100%.
+4. Keep the full regression suite green.
+5. Kotlin-first; every public API milestone includes Java-callable usage and Java sample/regression.
+6. Ship via PR → green CI → automerge.
+7. Never embed Quarkus, Micronaut, or Spring.
+8. NEVER adjust GitHub rulesets.
+
+## Docs
+
+Exhaustive feature guides live in `apps/docs/`. Kona’s public site must only brief + link here.

@@ -1,0 +1,74 @@
+---
+title: Your first page
+description: Render an Inertia page from a route and see HTML then JSON visits.
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## 1. Root shell
+
+Crema view `src/main/resources/views/app.crema.html`:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>{!! vite !!}</head>
+  <body>
+    <div id="app" data-page="{!! pageAttr !!}"></div>
+  </body>
+</html>
+```
+
+Config: `inertia.root_view=app`, `inertia.version=1`.
+
+## 2. Route
+
+<Tabs syncKey="lang">
+<TabItem label="Kotlin">
+
+```kotlin
+router.get("/") {
+    Inertia.render("Pages/Home", mapOf("title" to "Hello"))
+}
+```
+
+</TabItem>
+<TabItem label="Java">
+
+```java
+router.get("/", request ->
+    Inertia.render("Pages/Home", Map.of("title", "Hello"))
+);
+```
+
+</TabItem>
+</Tabs>
+
+## 3. First visit
+
+`GET /` without `X-Inertia` returns HTML. The `#app` element’s `data-page` attribute holds escaped JSON with `component`, `props`, `url`, and `version`.
+
+## 4. Inertia visit
+
+```http
+GET / HTTP/1.1
+X-Inertia: true
+X-Inertia-Version: 1
+```
+
+Response body (shape):
+
+```json
+{
+  "component": "Pages/Home",
+  "props": { "title": "Hello" },
+  "url": "/",
+  "version": "1"
+}
+```
+
+Headers include `X-Inertia: true`, `Vary: X-Inertia`, and `X-Inertia-Version` when a version is set.
+
+## 5. Client mount
+
+Install your adapter and mount against `#app` / `data-page`. The starter kit leaves a stub at `src/main/resources/js/app.js` — replace it with a real Inertia app entry.

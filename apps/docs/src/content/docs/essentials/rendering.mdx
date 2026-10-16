@@ -1,0 +1,51 @@
+---
+title: Rendering pages
+description: Inertia.render overloads, page props, and the InertiaPage shape.
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Facade API
+
+| Call | Behavior |
+|------|----------|
+| `Inertia.render(component)` | Props empty; uses current request from middleware |
+| `Inertia.render(component, props)` | Same with props map |
+| `Inertia.render(request, component)` | Explicit request |
+| `Inertia.render(request, component, props)` | Explicit request + props |
+
+Without middleware (or `manager.setRequest`), calls that omit `request` throw `InertiaException`.
+
+<Tabs syncKey="lang">
+<TabItem label="Kotlin">
+
+```kotlin
+Inertia.render("Pages/Users/Index", mapOf(
+    "users" to listOf(mapOf("id" to 1, "name" to "Ada")),
+))
+```
+
+</TabItem>
+<TabItem label="Java">
+
+```java
+Inertia.render("Pages/Users/Index", Map.of(
+    "users", List.of(Map.of("id", 1, "name", "Ada"))
+));
+```
+
+</TabItem>
+</Tabs>
+
+## Page object
+
+`InertiaPage` fields serialized to JSON / `data-page`:
+
+| Field | Meaning |
+|-------|---------|
+| `component` | Client component name (e.g. `Pages/Home`) |
+| `props` | Merged shared + request-shared + local props |
+| `url` | `request.path` |
+| `version` | Manager version, or `null` when empty |
+
+Prop merge order: **global shared** → **per-request shared** (middleware) → **local props** (wins on key clash).

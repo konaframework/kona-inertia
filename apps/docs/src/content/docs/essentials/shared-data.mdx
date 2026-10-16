@@ -1,0 +1,61 @@
+---
+title: Shared data
+description: Global Inertia.share, per-request middleware share, and merge rules.
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Global share
+
+Lives for the life of the process (or until cleared):
+
+```kotlin
+Inertia.share("appName", "Kona")
+Inertia.share(mapOf("features" to listOf("a", "b")))
+```
+
+```java
+Inertia.share("appName", "Kona");
+Inertia.share(Map.of("features", List.of("a", "b")));
+```
+
+Inspect with `Inertia.manager().shared()`. Clear with `manager.clearShared()`.
+
+## Per-request share
+
+Subclass middleware:
+
+<Tabs syncKey="lang">
+<TabItem label="Kotlin">
+
+```kotlin
+class HandleInertia : HandleInertiaRequests() {
+    override fun share(request: Request) = mapOf(
+        "path" to request.path,
+        "auth" to mapOf("user" to currentUser(request)),
+    )
+}
+```
+
+</TabItem>
+<TabItem label="Java">
+
+```java
+public class HandleInertia extends HandleInertiaRequests {
+    @Override
+    public Map<String, Object> share(Request request) {
+        return Map.of("path", request.getPath());
+    }
+}
+```
+
+</TabItem>
+</Tabs>
+
+Internally this calls `manager.shareForRequest(props)` for the duration of the request. The ThreadLocal map is cleared when the middleware finishes.
+
+## Merge order
+
+1. Global `share`
+2. Middleware / `shareForRequest`
+3. Props passed to `Inertia.render` (highest priority)

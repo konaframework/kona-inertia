@@ -1,0 +1,45 @@
+/*
+ * Inertia brand — indigo primary, cyan accent.
+ * Overrides @almasix/starlight-theme oranges for an indigo-tinted surface.
+ */
+
+:root {
+  --inertia-primary: #4f46e5;
+  --inertia-primary-soft: #818cf8;
+  --inertia-primary-deep: #3730a3;
+  --inertia-primary-mist: #e0e7ff;
+  --inertia-paper: #eef2ff;
+  --inertia-paper-2: #e0e7ff;
+  --inertia-accent: #0891b2;
+  --inertia-accent-soft: #22d3ee;
+  --inertia-accent-deep: #0e7490;
+  --inertia-glow: rgba(79, 70, 229, 0.2);
+
+  --sl-font: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --sl-font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --almasix-orange: var(--inertia-primary);
+  --almasix-orange-soft: var(--inertia-primary-soft);
+  --almasix-orange-deep: var(--inertia-primary-deep);
+  --almasix-blue: var(--inertia-accent-deep);
+  --almasix-blue-bright: var(--inertia-accent-soft);
+  --almasix-glow: var(--inertia-glow);
+
+  --sl-color-accent-low: #1e1b4b;
+  --sl-color-accent: var(--inertia-primary-soft);
+  --sl-color-accent-high: #c7d2fe;
+  --sl-color-text-accent: var(--inertia-primary-soft);
+  --sl-color-bg-accent: var(--inertia-primary);
+}
+
+:root[data-theme='light'],
+[data-theme='light'] {
+  --sl-color-accent-low: #e0e7ff;
+  --sl-color-accent: var(--inertia-primary);
+  --sl-color-accent-high: var(--inertia-primary-deep);
+  --sl-color-text-accent: var(--inertia-primary-deep);
+  --sl-color-bg-accent: var(--inertia-primary);
+  --sl-color-bg: var(--inertia-paper);
+  --sl-color-bg-nav: #ffffff;
+  --sl-color-bg-sidebar: #f8fafc;
+}

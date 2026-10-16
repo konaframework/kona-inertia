@@ -1,0 +1,23 @@
+---
+title: Starter kit
+description: kona new --kit=inertia layout, dependencies, and publish requirements.
+---
+
+```bash
+kona new my-app --kit=inertia
+kona new my-app --kit=inertia --lang=java
+```
+
+The kit (owned by the Kona CLI repo) overlays:
+
+- Dependency `dev.kona:kona-inertia`
+- `InertiaServiceProvider` + `HandleInertia` middleware
+- Crema root view `app`, Vite stubs (`package.json`, `vite.config.js`, JS entry)
+- Welcome controller that calls `Inertia.render("Pages/Welcome", …)`
+
+Publish order before the first Gradle build of a generated app:
+
+1. Kona → `publishToMavenLocal`
+2. This repo → `:kona-inertia:publishToMavenLocal`
+
+See also [Kona starter kits](https://konaframework.github.io/kona/docs/starter-kits/).
