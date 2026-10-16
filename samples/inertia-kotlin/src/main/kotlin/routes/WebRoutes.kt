@@ -1,7 +1,7 @@
 package routes
 
-import dev.kona.http.Router
-import dev.kona.inertia.Inertia
+import io.konaframework.http.Router
+import io.konaframework.inertia.Inertia
 
 object WebRoutes {
     fun register(router: Router) {

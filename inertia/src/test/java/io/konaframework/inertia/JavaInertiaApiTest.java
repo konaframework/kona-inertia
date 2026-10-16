@@ -1,15 +1,15 @@
-package dev.kona.inertia;
+package io.konaframework.inertia;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import dev.kona.core.Application;
-import dev.kona.http.HttpKernel;
-import dev.kona.http.HttpServiceProvider;
-import dev.kona.http.Request;
-import dev.kona.http.Response;
-import dev.kona.http.Router;
-import dev.kona.inertia.assets.Vite;
+import io.konaframework.core.Application;
+import io.konaframework.http.HttpKernel;
+import io.konaframework.http.HttpServiceProvider;
+import io.konaframework.http.Request;
+import io.konaframework.http.Response;
+import io.konaframework.http.Router;
+import io.konaframework.inertia.assets.Vite;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Map;
