@@ -1,9 +1,9 @@
-package dev.kona.inertia
+package io.konaframework.inertia
 
-import dev.kona.http.Handler
-import dev.kona.http.Middleware
-import dev.kona.http.Request
-import dev.kona.http.Response
+import io.konaframework.http.Handler
+import io.konaframework.http.Middleware
+import io.konaframework.http.Request
+import io.konaframework.http.Response
 
 /**
  * Middleware that shares props, enforces asset versioning, and tags Inertia responses.

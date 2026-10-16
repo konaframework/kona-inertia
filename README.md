@@ -8,7 +8,7 @@ router.get("/") {
 }
 ```
 
-- Artifact: `dev.kona:kona-inertia` (Kotlin internals, first-class Java API).
+- Artifact: `io.konaframework:kona-inertia` (Kotlin internals, first-class Java API).
 - Depends on published Kona modules: `kona-core`, `kona-http`, `kona-crema`.
 - **Docs (this repo):** https://konaframework.github.io/kona-inertia/ — Astro + Starlight under `apps/docs/`.
 - Framework primer also on the [Kona docs](https://konaframework.github.io/kona/) site (brief + link).
@@ -31,7 +31,7 @@ Workflow [`.github/workflows/docs.yml`](.github/workflows/docs.yml) builds `apps
 
 - JDK 21
 - Node 22 (docs site)
-- Kona artifacts in Maven local (until `dev.kona` is published to Maven Central)
+- Kona artifacts in Maven local (until `io.konaframework` is published to Maven Central)
 
 ## Build and test
 
@@ -64,4 +64,4 @@ kona new my-app --kit=inertia
 # or --lang=java
 ```
 
-Publish `dev.kona:kona-inertia` to Maven local before the first generated-app build.
+Publish `io.konaframework:kona-inertia` to Maven local before the first generated-app build.

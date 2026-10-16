@@ -9,9 +9,9 @@ jackson = "2.18.3"
 netty = "4.1.119.Final"
 
 [libraries]
-kona-core = { module = "dev.kona:kona-core", version.ref = "kona" }
-kona-http = { module = "dev.kona:kona-http", version.ref = "kona" }
-kona-crema = { module = "dev.kona:kona-crema", version.ref = "kona" }
+kona-core = { module = "io.konaframework:kona-core", version.ref = "kona" }
+kona-http = { module = "io.konaframework:kona-http", version.ref = "kona" }
+kona-crema = { module = "io.konaframework:kona-crema", version.ref = "kona" }
 slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson" }

@@ -1,4 +1,4 @@
-package dev.kona.inertia
+package io.konaframework.inertia
 
 /**
  * Inertia page object returned as JSON for `X-Inertia` requests

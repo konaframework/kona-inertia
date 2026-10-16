@@ -16,7 +16,7 @@ Single source of truth for status and Definition of Done. Working rules: [AGENTS
 ## Extraction (done)
 
 - [x] Standalone repo `konaframework/kona-inertia`
-- [x] Artifact `dev.kona:kona-inertia` with Maven publish
+- [x] Artifact `io.konaframework:kona-inertia` with Maven publish
 - [x] 100% Kover on production code
 - [x] Kotlin + Java samples
 - [x] Exhaustive docs site + GitHub Pages workflow
