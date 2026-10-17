@@ -32,8 +32,17 @@ If you prefer reactive **server** components without a JS SPA stack, see [Brew](
 3. **Version mismatch** → `409` so the client can hard-reload assets.
 4. **External redirect** via `Inertia.location` → `409` + `X-Inertia-Location` for Inertia clients; ordinary browsers get `302`.
 
+## Install in one command
+
+```bash
+kona install inertia
+# or: kona new my-app --kit=inertia
+```
+
+Details: [Installation](../installation/).
+
 ## Next steps
 
 - [Requirements](../requirements/)
-- [Installation](../installation/)
+- [Installation](../installation/) — `kona install inertia`, kit, and finish wiring
 - [Your first page](../first-page/)
