@@ -10,7 +10,7 @@ router.get("/") {
 
 - Artifact: `org.konaframework:kona-inertia` (Kotlin internals, first-class Java API).
 - Depends on published Kona modules: `kona-core`, `kona-http`, `kona-crema`.
-- **Docs (this repo):** https://inertia.konaframework.org/ — Astro + Starlight under `apps/docs/`.
+- **Docs (this repo):** https://inertia.konaframework.org/ — Astro + Starlight under `apps/docs/` (coffee brand: caramel `#DF8723` / latte `#C9A57B` / accent `#74453F`).
 - Framework primer also on the [Kona docs](https://docs.konaframework.org/) site (brief + link).
 
 ## Documentation site
@@ -23,9 +23,7 @@ PUBLIC_SITE_URL=https://inertia.konaframework.org PUBLIC_BASE_PATH=/ npm run bui
 npm run preview
 ```
 
-GitHub Pages is enabled for this repository (Settings → Pages → **GitHub Actions**).
-Workflow [`.github/workflows/docs.yml`](.github/workflows/docs.yml) builds `apps/docs` on pushes to
-`main` and deploys to https://inertia.konaframework.org/.
+Primary host is Cloudflare Workers Assets (`kona-inertia-docs`). Optional mirror: GitHub Pages via [`.github/workflows/docs.yml`](.github/workflows/docs.yml). Branding SVGs: `apps/docs/public/branding/`.
 
 ## Requirements
 

@@ -7,6 +7,18 @@ Stack: **Astro + Starlight + `@almasix/starlight-theme`**, **npm** under `apps/d
 | `apps/docs/` | Public Starlight site |
 | `docs/governance/` | Process locks (this file, handoff) |
 
+## Brand
+
+Shared coffee palette with Kona / Brew:
+
+| Token | Light | Dark |
+|-------|-------|------|
+| Primary | caramel `#DF8723` | latte `#C9A57B` |
+| Accent | warm brown `#74453F` (soft `#8B5A52`, deep `#5A322E`) | soft cream `#E8D4B8` for headings |
+| Surfaces | cream paper | espresso |
+
+Wordmark: Outfit Black — caramel/latte **I + momentum underline**; remaining letters black (light) / white (dark). Assets live under `apps/docs/public/branding/` (`inertia-logo`, `inertia-banner`, `inertia-mark`, light + dark) plus `favicon.svg` / `og.svg`. Starlight logo uses `src/assets/inertia-logo{,-dark}.svg`; the custom landing at `/` and `SiteTitle` use the banner lockups.
+
 ## Cloudflare Workers Builds (primary)
 
 **First publish does not require GitHub secrets.** Cloudflare’s Workers Builds Git integration clones, builds, and deploys from the repo. Workers Builds supplies its own API token — do **not** add a `CLOUDFLARE_API_TOKEN` build variable.

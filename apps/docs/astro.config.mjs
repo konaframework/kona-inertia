@@ -23,6 +23,12 @@ export default defineConfig({
       description:
         'Inertia for Kona — serve modern single-page frontends with server-driven page props. Kotlin-first, Java first-class.',
       favicon: '/favicon.svg',
+      logo: {
+        light: './src/assets/inertia-logo.svg',
+        dark: './src/assets/inertia-logo-dark.svg',
+        alt: 'Inertia',
+        replacesTitle: true,
+      },
       social: [
         {
           icon: 'github',
@@ -59,7 +65,7 @@ export default defineConfig({
           tag: 'meta',
           attrs: {
             name: 'theme-color',
-            content: '#4F46E5',
+            content: '#DF8723',
           },
         },
         {
