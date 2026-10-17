@@ -13,6 +13,7 @@ export async function buildSidebar() {
         { label: 'Requirements', slug: 'guides/requirements' },
         { label: 'Installation', slug: 'guides/installation' },
         { label: 'Your first page', slug: 'guides/first-page' },
+        { label: 'Frontend clients', slug: 'guides/frontend' },
       ],
     },
     {
