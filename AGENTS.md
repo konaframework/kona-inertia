@@ -23,10 +23,10 @@ Use **Auto** (Cursor Auto / `inherit`) for the parent agent and all subagents un
 
 ## Architecture locks
 
-- Group `io.konaframework`, artifact `kona-inertia`, package `io.konaframework.inertia`.
+- Group `org.konaframework`, artifact `kona-inertia`, package `org.konaframework.inertia`.
 - Depends on published Kona artifacts (`kona-core`, `kona-http`, `kona-crema`). CI builds Kona `main` and runs `publishToMavenLocal` first.
 - Protocol: first visit HTML shell with `data-page`; `X-Inertia: true` → JSON `{ component, props, url, version }`; version mismatch → 409; `Inertia.location` → 409 + `X-Inertia-Location` for Inertia clients else 302.
-- Vite tags via shared Crema `AssetManifest` / facade `io.konaframework.inertia.assets.Vite`.
+- Vite tags via shared Crema `AssetManifest` / facade `org.konaframework.inertia.assets.Vite`.
 - Virtual threads on the Kona HTTP path; no blocking in the Netty event loop.
 - **Public docs:** Astro + Starlight + `@almasix/starlight-theme` in `apps/docs/`. Exhaustive feature guides live here; Kona’s site keeps only a brief + link.
 

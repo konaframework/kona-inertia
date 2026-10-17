@@ -15,15 +15,15 @@ You keep routing, controllers, auth, and validation on the server. The browser m
 | `InertiaManager` | Builds HTML shells and JSON page responses |
 | `HandleInertiaRequests` | Middleware: per-request shared props, version checks, response headers |
 | `InertiaServiceProvider` | Binds manager + Vite `AssetManifest` |
-| `io.konaframework.inertia.assets.Vite` | Thin facade over Crema’s Vite resolver |
+| `org.konaframework.inertia.assets.Vite` | Thin facade over Crema’s Vite resolver |
 
-Artifact: `io.konaframework:kona-inertia` from [konaframework/kona-inertia](https://github.com/konaframework/kona-inertia).
+Artifact: `org.konaframework:kona-inertia` from [konaframework/kona-inertia](https://github.com/konaframework/kona-inertia).
 
 ## When to use it
 
 Use Inertia when you want a modern SPA UX without writing a separate JSON API for every screen. Controllers return page props; the client renders named components.
 
-If you prefer reactive **server** components without a JS SPA stack, see [Brew](https://konaframework.github.io/kona-brew/) instead. For classic HTML templates, use [Crema](https://konaframework.github.io/kona/docs/crema/).
+If you prefer reactive **server** components without a JS SPA stack, see [Brew](https://brew.konaframework.org/) instead. For classic HTML templates, use [Crema](https://docs.konaframework.org/docs/crema/).
 
 ## Protocol at a glance
 

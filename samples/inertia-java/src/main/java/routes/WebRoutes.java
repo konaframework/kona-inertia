@@ -1,8 +1,8 @@
 package routes;
 
-import io.konaframework.http.Request;
-import io.konaframework.http.Router;
-import io.konaframework.inertia.Inertia;
+import org.konaframework.http.Request;
+import org.konaframework.http.Router;
+import org.konaframework.inertia.Inertia;
 import java.util.Map;
 
 public final class WebRoutes {

@@ -1,15 +1,15 @@
 package bootstrap
 
 import app.http.middleware.HandleInertia
-import io.konaframework.core.Application
-import io.konaframework.core.Env
-import io.konaframework.core.Kona
-import io.konaframework.crema.CremaServiceProvider
-import io.konaframework.http.HttpKernel
-import io.konaframework.http.HttpServiceProvider
-import io.konaframework.http.KonaHttpServer
-import io.konaframework.http.Router
-import io.konaframework.inertia.InertiaServiceProvider
+import org.konaframework.core.Application
+import org.konaframework.core.Env
+import org.konaframework.core.Kona
+import org.konaframework.crema.CremaServiceProvider
+import org.konaframework.http.HttpKernel
+import org.konaframework.http.HttpServiceProvider
+import org.konaframework.http.KonaHttpServer
+import org.konaframework.http.Router
+import org.konaframework.inertia.InertiaServiceProvider
 import routes.WebRoutes
 
 object App {

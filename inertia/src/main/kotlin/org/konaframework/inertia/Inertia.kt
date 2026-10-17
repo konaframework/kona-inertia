@@ -1,7 +1,7 @@
-package io.konaframework.inertia
+package org.konaframework.inertia
 
-import io.konaframework.http.Request
-import io.konaframework.http.Response
+import org.konaframework.http.Request
+import org.konaframework.http.Response
 
 /**
  * Facade for Inertia page responses (Java-callable statics).

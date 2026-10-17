@@ -4,10 +4,10 @@ Paste this file (or its path) into a new chat so another agent can continue with
 
 ## Purpose
 
-**kona-inertia** lets a Kona JVM app return an Inertia **page object** (component + props) for SPA hydration. First visit is HTML; later navigations use `X-Inertia` → JSON. Artifact `io.konaframework:kona-inertia`, package `io.konaframework.inertia`. Kotlin-first, Java first-class.
+**kona-inertia** lets a Kona JVM app return an Inertia **page object** (component + props) for SPA hydration. First visit is HTML; later navigations use `X-Inertia` → JSON. Artifact `org.konaframework:kona-inertia`, package `org.konaframework.inertia`. Kotlin-first, Java first-class.
 
 Repo: [konaframework/kona-inertia](https://github.com/konaframework/kona-inertia)  
-Docs: https://konaframework.github.io/kona-inertia/  
+Docs: https://inertia.konaframework.org/  
 Kona monorepo keeps a **brief link-out** + `--kit=inertia` skeletons (extraction PR: [kona#101](https://github.com/konaframework/kona/pull/101)).
 
 ## Read first
@@ -22,9 +22,9 @@ Kona monorepo keeps a **brief link-out** + `--kit=inertia` skeletons (extraction
 
 | Piece | Path |
 |-------|------|
-| Library | `inertia/` → `io.konaframework:kona-inertia` |
+| Library | `inertia/` → `org.konaframework:kona-inertia` |
 | Samples | `samples/inertia-kotlin`, `samples/inertia-java` |
-| Docs site | `apps/docs/` → https://konaframework.github.io/kona-inertia/ |
+| Docs site | `apps/docs/` → https://inertia.konaframework.org/ |
 | CI | `.github/workflows/ci.yml` (publishes Kona to mavenLocal first) |
 | Docs deploy | `.github/workflows/docs.yml` → GitHub Pages (Actions) |
 
@@ -35,7 +35,7 @@ Kona monorepo keeps a **brief link-out** + `--kit=inertia` skeletons (extraction
 | Default branch | `main` — initial extraction commit shipped |
 | Active milestone | **none** — package extracted; deepen as needed |
 | Open PRs | none (as of handoff) |
-| Pages | Enabled — https://konaframework.github.io/kona-inertia/ |
+| Pages | Enabled — https://inertia.konaframework.org/ |
 | Extraction | Done in this repo + Kona cutover [#101](https://github.com/konaframework/kona/pull/101) |
 | Models | **Auto only** unless human names a model |
 | Merge habit | PR → green CI → squash automerge |
@@ -45,7 +45,7 @@ Kona monorepo keeps a **brief link-out** + `--kit=inertia` skeletons (extraction
 **Done:**
 
 - Standalone repo with library, Kotlin + Java samples, exhaustive docs site, CI, Pages workflow.
-- Kona no longer vendors an in-tree Inertia module; apps depend on `io.konaframework:kona-inertia`.
+- Kona no longer vendors an in-tree Inertia module; apps depend on `org.konaframework:kona-inertia`.
 - Starter kit skeletons remain in Kona CLI (`--kit=inertia`); `kona install` can wire packages (kona #100).
 
 **In-flight / optional:**
@@ -71,7 +71,7 @@ Kona monorepo keeps a **brief link-out** + `--kit=inertia` skeletons (extraction
 # Docs
 cd apps/docs && npm ci && npm run dev
 # Pages build:
-# PUBLIC_SITE_URL=https://konaframework.github.io PUBLIC_BASE_PATH=/kona-inertia/ npm run build
+# PUBLIC_SITE_URL=https://inertia.konaframework.org PUBLIC_BASE_PATH=/ npm run build
 ```
 
 Run samples:
@@ -93,7 +93,7 @@ Run samples:
 - First visit: HTML shell with `data-page`.
 - `X-Inertia: true` → JSON `{ component, props, url, version }`.
 - Version mismatch → 409; `Inertia.location` → 409 + `X-Inertia-Location` (or 302 for non-Inertia).
-- Vite tags via Crema `AssetManifest` / `io.konaframework.inertia.assets.Vite`.
+- Vite tags via Crema `AssetManifest` / `org.konaframework.inertia.assets.Vite`.
 
 ## Do not
 

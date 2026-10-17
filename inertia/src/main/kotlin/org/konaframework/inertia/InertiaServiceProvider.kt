@@ -1,10 +1,10 @@
-package io.konaframework.inertia
+package org.konaframework.inertia
 
-import io.konaframework.core.Application
-import io.konaframework.core.ServiceProvider
-import io.konaframework.crema.CremaEngine
-import io.konaframework.crema.assets.AssetManifest
-import io.konaframework.crema.assets.Vite
+import org.konaframework.core.Application
+import org.konaframework.core.ServiceProvider
+import org.konaframework.crema.CremaEngine
+import org.konaframework.crema.assets.AssetManifest
+import org.konaframework.crema.assets.Vite
 import java.nio.file.Path
 
 /**

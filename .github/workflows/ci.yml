@@ -57,6 +57,6 @@ jobs:
         working-directory: .kona
         run: ./gradlew publishToMavenLocal -x test --no-configuration-cache
       - name: Inertia tests with 100% line + branch coverage
-        run: ./gradlew :kona-inertia:test :kona-inertia:koverVerify
+        run: ./gradlew :kona-inertia:test :kona-inertia:koverVerify --rerun-tasks --no-build-cache
       - name: Kotlin + Java samples
         run: ./gradlew :inertia-sample-kotlin:test :inertia-sample-java:test
