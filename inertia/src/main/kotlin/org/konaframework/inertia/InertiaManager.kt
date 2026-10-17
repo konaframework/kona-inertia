@@ -1,12 +1,12 @@
-package io.konaframework.inertia
+package org.konaframework.inertia
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import io.konaframework.crema.CremaEngine
-import io.konaframework.http.Request
-import io.konaframework.http.Response
-import io.konaframework.crema.assets.Vite
-import io.konaframework.crema.assets.ViteException
+import org.konaframework.crema.CremaEngine
+import org.konaframework.http.Request
+import org.konaframework.http.Response
+import org.konaframework.crema.assets.Vite
+import org.konaframework.crema.assets.ViteException
 import java.util.concurrent.ConcurrentHashMap
 
 /**

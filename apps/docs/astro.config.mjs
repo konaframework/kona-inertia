@@ -4,9 +4,9 @@ import starlight from '@astrojs/starlight';
 import almasixTheme from '@almasix/starlight-theme';
 import { buildSidebar } from './sidebar.mjs';
 
-// GitHub Pages: PUBLIC_BASE_PATH=/kona-inertia/ → https://konaframework.github.io/kona-inertia/
+// Production: https://inertia.konaframework.org (PUBLIC_BASE_PATH=/). GH Pages mirror: PUBLIC_BASE_PATH=/kona-inertia/
 const base = process.env.PUBLIC_BASE_PATH || '/';
-const site = process.env.PUBLIC_SITE_URL || 'https://konaframework.github.io';
+const site = process.env.PUBLIC_SITE_URL || 'https://inertia.konaframework.org';
 const origin = site.replace(/\/$/, '');
 const normalizedBase = base === '/' ? '/' : `/${base.replace(/^\/|\/$/g, '')}/`;
 const ogImage = `${origin}${normalizedBase}og.svg`;

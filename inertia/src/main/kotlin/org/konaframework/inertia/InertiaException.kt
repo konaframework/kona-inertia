@@ -1,3 +1,3 @@
-package io.konaframework.inertia
+package org.konaframework.inertia
 
 class InertiaException(message: String) : RuntimeException(message)

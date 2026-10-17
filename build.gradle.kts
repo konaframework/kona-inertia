@@ -9,12 +9,12 @@ plugins {
 }
 
 allprojects {
-    group = "io.konaframework"
+    group = "org.konaframework"
     version = providers.gradleProperty("inertia.version").get()
 
     repositories {
         mavenLocal {
-            content { includeGroup("io.konaframework") }
+            content { includeGroup("org.konaframework") }
         }
         mavenCentral()
     }
@@ -58,7 +58,7 @@ fun Project.configureKonaInertiaPublishing() {
         pom {
             name.set("kona-inertia")
             description.set("Inertia adapter for Kona")
-            url.set("https://github.com/konaframework/kona-inertia")
+            url.set("https://inertia.konaframework.org")
             inceptionYear.set("2025")
             licenses {
                 license {
@@ -71,7 +71,7 @@ fun Project.configureKonaInertiaPublishing() {
                 developer {
                     id.set("konaframework")
                     name.set("Kona Framework contributors")
-                    url.set("https://github.com/konaframework")
+                    url.set("https://konaframework.org")
                 }
             }
             scm {
