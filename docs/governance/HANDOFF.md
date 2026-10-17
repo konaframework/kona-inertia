@@ -47,7 +47,7 @@ Kona monorepo keeps a **brief link-out** + `--kit=inertia` skeletons (extraction
 
 - Standalone repo with library, Kotlin + Java samples, exhaustive docs site, CI, Pages workflow.
 - Kona no longer vendors an in-tree Inertia module; apps depend on `org.konaframework:kona-inertia`.
-- Starter kit skeletons remain in Kona CLI (`--kit=inertia`); `kona install` can wire packages (kona #100).
+- Starter kit skeletons remain in Kona CLI (`--kit=inertia`); `./grind install` can wire packages (kona #100).
 
 **In-flight / optional:**
 

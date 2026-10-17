@@ -1,20 +1,20 @@
 ---
 title: Installation
-description: Add Inertia with one command — kona install inertia — or scaffold a new app with the inertia kit.
+description: Add Inertia with one command — ./grind install inertia (or kona grind install inertia) — or scaffold with the inertia kit.
 ---
 
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 
-Inertia should feel like a one-liner. Prefer **`kona install`** (or the inertia starter kit). Manual Gradle edits are optional and listed at the end.
+Inertia should feel like a one-liner. Prefer **`./grind install`** (or **`kona grind install`**), or the inertia starter kit. Manual Gradle edits are optional and listed at the end.
 
 ## Already have a Kona app?
 
 From the app root (where `build.gradle.kts` / `build.gradle` lives):
 
 ```bash
-kona install inertia
-# same thing, app-local:
 ./grind install inertia
+# from anywhere under the app:
+kona grind install inertia
 ```
 
 That command:
@@ -32,7 +32,8 @@ Then refresh Gradle and rebuild:
 Pin a version when you need to:
 
 ```bash
-kona install inertia --version=0.1.0
+./grind install inertia --version=0.1.0
+# or: kona grind install inertia --version=0.1.0
 ```
 
 See the full package installer docs on Kona: [Installing packages](https://docs.konaframework.org/docs/packages/install/).
@@ -51,7 +52,7 @@ cd my-app
 
 ## Finish wiring (existing apps)
 
-`kona install inertia` registers the provider. On an app that was **not** created with `--kit=inertia`, add the Inertia middleware after boot and point at a root view (or HTML shell):
+`./grind install inertia` registers the provider. On an app that was **not** created with `--kit=inertia`, add the Inertia middleware after boot and point at a root view (or HTML shell):
 
 <Tabs syncKey="lang">
 <TabItem label="Kotlin">
@@ -88,7 +89,7 @@ Details: [Configuration](../../essentials/configuration/) and [Vite](../../advan
 
 ## Going deeper — manual Gradle (optional)
 
-Only if you are not using `kona install` / the kit:
+Only if you are not using `./grind install` / the kit:
 
 ```kotlin
 dependencies {
@@ -105,5 +106,5 @@ Until Maven Central publishes are live for your version line, publish to Maven l
 ## Next
 
 - [Introduction](../introduction/) — how Inertia fits a Kona app
-- [Kona — installing packages](https://docs.konaframework.org/docs/packages/install/) — `kona install` catalog and flags
+- [Kona — installing packages](https://docs.konaframework.org/docs/packages/install/) — `./grind install` catalog and flags
 - [Kona installation](https://docs.konaframework.org/docs/guides/installation/) — base framework setup
