@@ -10,8 +10,8 @@
     "build": "astro build",
     "preview": "astro preview --port 4323",
     "astro": "astro",
-    "cf:deploy": "wrangler pages deploy dist --project-name=kona-inertia-docs",
-    "cf:preview": "wrangler pages deploy dist --project-name=kona-inertia-docs --branch=preview"
+    "cf:deploy": "wrangler deploy",
+    "cf:preview": "wrangler versions upload"
   },
   "dependencies": {
     "@almasix/starlight-theme": "^0.1.1",
