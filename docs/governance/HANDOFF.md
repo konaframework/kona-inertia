@@ -25,8 +25,9 @@ Kona monorepo keeps a **brief link-out** + `--kit=inertia` skeletons (extraction
 | Library | `inertia/` → `org.konaframework:kona-inertia` |
 | Samples | `samples/inertia-kotlin`, `samples/inertia-java` |
 | Docs site | `apps/docs/` → https://inertia.konaframework.org/ |
+| Branding | `apps/docs/public/branding/inertia-{logo,banner,mark}{,-dark}.svg` |
 | CI | `.github/workflows/ci.yml` (publishes Kona to mavenLocal first) |
-| Docs deploy | `.github/workflows/docs.yml` → GitHub Pages (Actions) |
+| Docs deploy | Cloudflare Workers Assets (`kona-inertia-docs`); optional GH Pages mirror |
 
 ## Where we are (2026-10-16)
 
