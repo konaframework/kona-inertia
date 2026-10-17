@@ -49,3 +49,33 @@ Inertia.render("Pages/Users/Index", Map.of(
 | `version` | Manager version, or `null` when empty |
 
 Prop merge order: **global shared** → **per-request shared** (middleware) → **local props** (wins on key clash).
+
+## Component naming
+
+The `component` string is opaque to Kona — it is echoed to the client. By convention the kit and `./grind install` scaffolds use `Pages/Name` and resolve files under `src/main/resources/js/Pages/Name.{vue,jsx,svelte}`. Keep server and client naming in lockstep or the browser will throw “page not found”.
+
+## When HTML vs JSON is chosen
+
+| Condition | Body |
+|-----------|------|
+| No `X-Inertia` request header | HTML root shell (`root_view` / `root_html`) with `data-page` |
+| `X-Inertia: true` and version OK | JSON page object |
+| `X-Inertia: true` and version mismatch | `409` (see [Asset versioning](../../advanced/versioning/)) |
+
+You do not pick the mode in the controller — call `Inertia.render` the same way for both; middleware + manager select the representation.
+
+## Lazy / missing request
+
+```kotlin
+// Throws if middleware has not set the current request:
+Inertia.render("Pages/Home")
+
+// Explicit request (tests, unusual pipelines):
+Inertia.render(request, "Pages/Home", mapOf("ok" to true))
+```
+
+## Next
+
+- [Requests & responses](../requests-responses/)
+- [Shared data](../shared-data/)
+- [Your first page](../../guides/first-page/)

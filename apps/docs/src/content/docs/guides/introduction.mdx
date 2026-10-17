@@ -35,14 +35,19 @@ If you prefer reactive **server** components without a JS SPA stack, see [Brew](
 ## Install in one command
 
 ```bash
-kona grind install inertia
-# or: kona new my-app --kit=inertia
+./grind install inertia
+# interactive frontend: Vue / React / Svelte
+# or greenfield:
+kona new my-app --kit=inertia
 ```
 
-Details: [Installation](../installation/).
+That path covers the Maven artifact **and** a Vite client scaffold. Walkthrough: [Installation](../installation/).
+
+Client protocol and adapters: [inertiajs.com](https://inertiajs.com/).
 
 ## Next steps
 
 - [Requirements](../requirements/)
-- [Installation](../installation/) — `./grind install inertia` / `kona grind install inertia`, kit, and finish wiring
+- [Installation](../installation/) — end-to-end until the first page works
 - [Your first page](../first-page/)
+- [Frontend clients](../frontend/)
