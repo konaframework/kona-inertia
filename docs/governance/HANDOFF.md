@@ -27,6 +27,7 @@ Kona monorepo keeps a **brief link-out** + `--kit=inertia` skeletons (extraction
 | Docs site | `apps/docs/` → https://inertia.konaframework.org/ |
 | Branding | `apps/docs/public/branding/inertia-{logo,banner,mark}{,-dark}.svg` |
 | CI | `.github/workflows/ci.yml` (publishes Kona to mavenLocal first) |
+| Kit HTTP smoke | `samples/*` — HTML shell (`data-page`) + `X-Inertia` JSON visit (owns coverage removed from kona `GeneratedAppBuildTest`) |
 | Docs deploy | Cloudflare Workers Assets (`kona-inertia-docs`); optional GH Pages mirror |
 
 ## Where we are (2026-10-16)

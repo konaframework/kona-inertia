@@ -41,7 +41,7 @@ git clone https://github.com/konaframework/kona ../kona
 # 2. Inertia library: tests + 100% line/branch coverage
 ./gradlew :kona-inertia:test :kona-inertia:koverVerify
 
-# 3. Samples
+# 3. Samples (kit HTTP smoke: HTML shell + X-Inertia JSON; kona CI does not publish this artifact)
 ./gradlew :inertia-sample-kotlin:test :inertia-sample-java:test
 
 # 4. Publish this artifact for apps / kona new --kit=inertia
