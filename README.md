@@ -1,3 +1,5 @@
+> **MOVED** to [konaframework/kona](https://github.com/konaframework/kona) (`modules/inertia`, `apps/inertia-docs`). This repository is **archived**. Do not open PRs or publish from here.
+
 # Inertia for Kona
 
 **kona-inertia** lets a Kona JVM app return an Inertia **page object** — component name plus props — that a JavaScript client hydrates. The first visit is a normal HTML document; later navigations send the `X-Inertia` header and receive JSON.
